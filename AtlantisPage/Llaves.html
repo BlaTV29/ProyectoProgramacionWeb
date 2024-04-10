@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Llaves</title>
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
@@ -82,41 +82,75 @@
         .info-button:hover {
             background-color: #999; 
         }
+        .btn-carrito {
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            border: none;
+        }
+        .btn-carrito:hover {
+            background-color: #45a049;
+        }
     </style>
 </head>
 <body>
-
     <div class="home-button-container">
         <a href="Home.html" class="home-button">Home</a>
     </div>
     <h1>Llaves</h1>
 
-    <div class="llave-container">
+    <div class="llave-container" id="llave1">
         <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave.png?raw=true" alt="Llave nivel 1" class="llave-img">
         <div class="llave-nombre">Llave nivel 1</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Llave nivel 1', '100000', 'Armadura de hierro', 'Herramientas de hierro', 'Orión[24H]', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave.png?raw=true')">Comprar</button>
         <div class="info-button-container">
             <a href="InformacionLlave1.html" class="info-button">Info</a>
         </div>
     </div>
 
-    <div class="llave-container">
+    <div class="llave-container" id="llave2">
         <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave3.png?raw=true" alt="Llave nivel 2" class="llave-img">
         <div class="llave-nombre">Llave nivel 2</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Llave nivel 2', '300000', 'Armadura de diamante', 'Herramientas de diamante', 'Poseidón[24H]', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave3.png?raw=true')">Comprar</button>
         <div class="info-button-container">
             <a href="InformacionLlave2.html" class="info-button">Info</a>
         </div>
     </div>
 
-    <div class="llave-container">
+    <div class="llave-container" id="llave3">
         <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave2.png?raw=true" alt="Llave nivel 3" class="llave-img">
         <div class="llave-nombre">Llave nivel 3</div>
-        <button>Comprar</button>
+        <button onclick="agregarAlCarrito('Llave nivel 3', '700000', 'Armadura de netherite', 'Herramientas de netherite', 'Pegaso[24H]', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave2.png?raw=true')">Comprar</button>
         <div class="info-button-container">
             <a href="InformacionLlave3.html" class="info-button">Info</a>
         </div>
     </div>
 
+    <script>
+        function agregarAlCarrito(nombre, dineroGanado, armadura, herramientas, rango, imagen) {
+            let carrito = localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
+            const nuevoProducto = {
+                nombre: nombre,
+                dineroGanado: dineroGanado,
+                armadura: armadura,
+                herramientas: herramientas,
+                rango: rango,
+                imagen: imagen 
+            };
+            carrito.push(nuevoProducto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert('Producto agregado al carrito chavales ostia');
+        }
+    </script>
+    
+    <p></p>
+    <a href="CarritoCompra.html" class="btn-carrito">Ir al Carrito de Compra</a>
 </body>
 </html>
+
