@@ -1,71 +1,116 @@
-<main class="Rangos.html">
-    <!DOCTYPE html>
-    <html lang="es">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rangos</title>
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                text-align: center;
-                padding: 20px;
-            }
-            h1 {
-                font-size: 36px;
-                margin-bottom: 30px;
-            }
-            .rango {
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                margin-bottom: 20px;
-                background: linear-gradient(to right, #ff6347, #b3bbd4);
-            }
-            .nombre-rango {
-                font-size: 24px;
-                background: linear-gradient(to right, #c5cf37, #a1c422);
-            }
-            .precio {
-                font-size: 24px;
-                margin-top: 20px;
-            }
-            button {
-                padding: 10px 20px;
-                font-size: 18px;
-                border: none;
-                background-color: dodgerblue;
-                color: white;
-                cursor: pointer;
-                border-radius: 5px;
-            }
-            button:hover {
-                background-color: royalblue;
-            }
-        </style>
-    </head>
-    <body>
-        <h1>Rangos</h1>
-    
-        <div class="rango">
-            <div class="nombre-rango">Orion [Permanente]</div>
-            <div class="precio"><center>2.000CLP</center></div>
-            <button>Agregar</button>
-        </div>
-    
-        <div class="rango">
-            <div class="nombre-rango">Poseidón [Permanente]</div>
-            <div class="precio"><center>5.000CLP</center></div>
-            <button>Agregar</button>
-        </div>
-    
-        <div class="rango">
-            <div class="nombre-rango">Pegaso [Permanente]</div>
-            <div class="precio"><center>10.000CLP</center></div>
-            <button>Agregar</button>
-        </div>
-    
-     
-    </body>
-    </html>
-    
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+        }
+        .rango {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, #ff6347, #b3bbd4);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .nombre-rango {
+            font-size: 24px;
+            background: linear-gradient(to right, #c5cf37, #a1c422);
+        }
+        .precio {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        button:hover {
+            background-color: royalblue;
+        }
+
+        .home-action-div{
+            
+        }
+
+        .mw100{
+            
+        }
+
+        .button{
+          
+          background-color: rgb(0, 147, 233);
+          color: white;
+          font-weight: 600;
+          font-size: medium;
+          width: 100px;
+          height: 45px;
+          display: flex;
+          flex-direction: row;
+          flex-wrap: nowrap;
+          align-content: center;
+          justify-content: center;
+          align-items: center;
+          border-radius: 8px;
+
+        }
+        .home-action-div{
+            display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+        }
+    </style>
+    <script>
+        function navigateHome() {
+            window.location.href="file:///C:/Users/CETECOM/Documents/GitHub/ProyectoProgramacionWeb/AtlantisPage/Home.html"
+        }
+    </script>
+</head>
+<body>
+    <div class="home-action-div mw100">
+        
+            <div onclick="navigateHome()" class="button" xt="margin-bottom: 10px;">
+                Home
+            </div>
+        
+    </div>
+
+    <h1>Rangos</h1>
+
+    <div class="rango">
+        <div class="nombre-rango">Orión [Permanente]</div>
+        <div class="precio"><center>$$$$$CLP</center></div>
+        <button>Agregar</button>
+    </div>
+
+    <div class="rango">
+        <div class="nombre-rango">Poseidón [Permanente]</div>
+        <div class="precio"><center>$$$$$CLP</center></div>
+        <button>Agregar</button>
+    </div>
+
+    <div class="rango">
+        <div class="nombre-rango">Pegaso [Permanente]</div>
+        <div class="precio"><center>$$$$CLP</center></div>
+        <button>Agregar</button>
+    </div>
+
+</body>
+</html>
