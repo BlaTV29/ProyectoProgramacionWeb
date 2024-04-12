@@ -3,33 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rangos</title>
+    <title>RANGOS</title>
     <style>
-        body {
+         body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
+            background-color: #d6d6d6; 
         }
         h1 {
             font-size: 36px;
             margin-bottom: 30px;
+            color: #333; 
         }
-        .rango {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            background: linear-gradient(to right, #ff6347, #b3bbd4);
+        .home-button-container {
+            display: inline-block;
             padding: 10px;
-            border-radius: 5px;
+            border-radius: 10px;
+            background-color: #4b9cd3; 
         }
-        .nombre-rango {
-            font-size: 24px;
-            background: linear-gradient(to right, #c5cf37, #a1c422);
+        .home-button {
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: transparent; 
+            border: none;
         }
-        .precio {
+        .home-button:hover {
+            background-color: rgba(30, 144, 255, 0.3);
+        }
+        .llave-container {
+            display: inline-block;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px;
+        }
+        .rango-img {
+            width: 200px; 
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .Rango-nombre {
             font-size: 24px;
-            margin-top: 20px;
+            font-weight: bold;
+            color: #333;
         }
         button {
             padding: 10px 20px;
@@ -39,71 +60,123 @@
             color: white;
             cursor: pointer;
             border-radius: 5px;
+            margin-top: 10px; 
         }
         button:hover {
             background-color: royalblue;
         }
 
-        
-        .button{
-          
-          background-color: rgb(0, 147, 233);
-          color: white;
-          font-weight: 600;
-          font-size: medium;
-          width: 100px;
-          height: 45px;
-          display: flex;
-          flex-direction: row;
-          flex-wrap: nowrap;
-          align-content: center;
-          justify-content: center;
-          align-items: center;
-          border-radius: 8px;
 
+        .info-button {
+            font-size: 16px;
+            background-color: #bbb; 
+            color: white;
+            padding: 8px 12px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
         }
-        .home-action-div{
+        .info-button:hover {
+            background-color: #999; 
+        }
+        .btn-carrito {
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            border: none;
+        }
+        .btn-carrito:hover {
+            background-color: #45a049;
+        }
+
+        .carrusel {
             display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
+            flex-wrap: nowrap;
+            overflow: auto;
+            scroll-padding: 0;
+            gap: 1em;
         }
+        .elemento {
+            object-fit: cover;
+            flex: 0 0 35%;
+            margin: 0 50px;
+            scroll-snap-align: start;
+            user-select: none;
+
+            display: inline-block;
+            background-color: #d6d6d6;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(239, 239, 239, 0.1); 
+            margin-bottom: 20px;
+           user-select: none;
+        }
+
+
+
     </style>
-    <script>
-        function navigateHome() {
-            window.location.href="file:///C:/Users/PC/Documents/GitHub/ProyectoProgramacionWeb/AtlantisPage/Home.html"
-        }
-    </script>
 </head>
 <body>
-    <div class="home-action-div mw100">
-        
-            <div onclick="navigateHome()" class="button" xt="margin-bottom: 10px;">
-                Home
-            </div>
-        
+    <div class="home-button-container">
+        <a href="Home.html" class="home-button">Home</a>
+    </div>
+    <h1>RANGOS</h1>
+
+<div class="carrusel">
+
+    <div class="elemento">
+    <div class="llave-container" id="llave1">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/orion logo.png?raw=true" alt="rango orion" class="rango-img">
+        <div class="Rango-nombre">ORION [PERMANENTE]</div>
+        <button onclick="agregarAlCarrito('ORION y color verde en tu nombre', 'no hay', 'hierro encantada', 'de moderador', 'MODERADOR NV1', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/orion logo.png?raw=true')">Comprar</button>
+ 
+    </div>
+    </div>
+    <div class="elemento">
+    <div class="llave-container" id="llave2">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/pegaso logo.png?raw=true" alt="rango orion" class="rango-img">
+        <div class="Rango-nombre">PEGASO [PERMANENTE]</div>
+        <button onclick="agregarAlCarrito('PEGASO y color amarillo en tu nombre', 'no hay', 'netherite encantada', 'de moderador', 'MODERADOR NV3', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/pegaso logo.png?raw=true')">Comprar</button>
+    </div>
     </div>
 
-    <h1>Rangos</h1>
-
-    <div class="rango">
-        <div class="nombre-rango">Orión [Permanente]</div>
-        <div class="precio"><center>$$$$$CLP</center></div>
-        <button>Agregar</button>
+    <div class="elemento">
+    <div class="llave-container" id="llave3">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/poseidon logo.png?raw=true" alt="rango poseidon" class="rango-img">
+        <div class="Rango-nombre">POSEIDON [PERMANENTE]</div>
+        <button onclick="agregarAlCarrito('POSEIDON y color azul en tu nombre', 'no hay', 'diamante encantada', 'de moderador', 'MODERADOR NV2', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/poseidon logo.png?raw=true')">Comprar</button>
     </div>
-
-    <div class="rango">
-        <div class="nombre-rango">Poseidón [Permanente]</div>
-        <div class="precio"><center>$$$$$CLP</center></div>
-        <button>Agregar</button>
     </div>
+</div>
 
-    <div class="rango">
-        <div class="nombre-rango">Pegaso [Permanente]</div>
-        <div class="precio"><center>$$$$CLP</center></div>
-        <button>Agregar</button>
-    </div>
+<script>
+    function agregarAlCarrito(nombre, dineroGanado, armadura, herramientas, rango, imagen) {
+        let carrito = localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
+        const nuevoProducto = {
+            nombre: nombre,
+            dineroGanado: dineroGanado,
+            armadura: armadura,
+            herramientas: herramientas,
+            rango: rango,
+            imagen: imagen 
+        };
+        carrito.push(nuevoProducto);
+        localStorage.setItem('carrito', JSON.stringify(carrito));
+        alert('Producto agregado al carrito chavales ostia');
+    }
+</script>
+    
+    <p></p>
+    <a href="CarritoCompra.html" class="btn-carrito">Ir al Carrito de Compra</a>
 
 </body>
+
 </html>
+

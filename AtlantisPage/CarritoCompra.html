@@ -95,7 +95,7 @@
     <p id="cantidad-productos"></p>
 
     <button onclick="finalizarCompra()" class="btn-finish">Finalizar Compra</button>
-    <a href="llaves.html" class="btn-back">Volver</a>
+    <a href="Home.html" class="btn-back">Volver</a>
 
     <script>
         function mostrarCarrito() {
@@ -113,9 +113,10 @@
                         <p>Dinero ganado: ${producto.dineroGanado}</p>
                         <p>Armadura: ${producto.armadura}</p>
                         <p>Herramientas: ${producto.herramientas}</p>
-                        <p>Rango: ${producto.rango}</p>
+                        ${producto.rango ? `<p>Rango: ${producto.rango}</p>` : ''} <!-- Mostrar la segunda descripción solo si existe el atributo 'rango' -->
                         <button onclick="confirmarEliminar(${index})" class="btn-delete">Eliminar producto</button>
                     </div>
+                    
                 `;
                 carritoContainer.innerHTML += productoHTML;
             });
