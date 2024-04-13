@@ -5,16 +5,21 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AtlantisCraft</title>
   <style>
-    /* Estilos para centrar el h1 y ajustar la imagen */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: black; 
+      color: white;
+      overflow-x: hidden; 
+    }
     h1 {
       text-align: center;
-      margin-top: 50px; /* Ajusta el margen superior según sea necesario */
+      margin-top: 50px; 
     }
     img {
-      width: 500px; /* Ajusta el tamaño de la imagen según sea necesario */
-      vertical-align: middle; /* Alinea la imagen verticalmente */
+      width: 500px; 
+      vertical-align: middle; 
     }
-    /* Estilos para el video de fondo */
     .video-background {
       position: fixed;
       top: 0;
@@ -33,6 +38,52 @@
       top: 0;
       left: 0;
     }
+    .content-overlay {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8); 
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+    }
+    .content-overlay p {
+      margin-bottom: 20px;
+      font-size: 24px;
+    }
+    .gold-text {
+      color: gold; 
+    }
+    .red-text {
+      color: red; 
+    }
+    .blue-text {
+      color: dodgerblue; 
+    }
+    .white-text {
+      color: white; 
+    }
+    .overlay-title {
+      font-size: 28px;
+      font-weight: bold;
+    }
+   
+    .discord-button {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 20px;
+      font-weight: bold;
+      color: white;
+      background-color: #7289DA; 
+      border: 2px solid #5865F2;
+      border-radius: 5px;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .discord-button:hover {
+      background-color: #5865F2; 
+    }
   </style>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
@@ -42,23 +93,19 @@
     <video autoplay loop muted poster="poster.jpg">
       <source src="../Imagenes/Introserver.mp4" type="video/mp4">
       <source src="../Imagenes/Introserver.mp4" type="video/webm">
-      <!-- Si deseas agregar otro formato de video, puedes hacerlo aquí -->
       Tu navegador no soporta la etiqueta de video.
     </video>
 </div>
 
-<h1><img src="../Imagenes/AtlantiscraftLogo.png" alt="Imagen"> </h1>
-<!--cambios necesarios-->
+<h1><img src="../Imagenes/AtlantiscraftLogo.png" alt="Imagen"></h1>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <a class="navbar-brand" href="#">Home</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+    <ul class="navbar-nav mx-auto"> 
       <li class="nav-item">
         <a class="nav-link" href="Rangos.html">Rangos</a>
       </li>
@@ -71,6 +118,22 @@
     </ul>
   </div>
 </nav>
+
+<div class="content-overlay">
+  <p class="gold-text">play.Atlantiscraft.net</p>
+  <p class="gold-text">0 players connected</p>
+
+  <p class="overlay-title red-text">Politica de Reembolso</p>
+  <p class="white-text">Las compras en esta tienda no son reembolsables. Para solucionar cualquier duda o error puedes contactar con soporte en nuestro Discord.
+    Puedes encontrar más información en los términos y condiciones de Discord.</p>
+
+  <p class="overlay-title blue-text">Contacto</p>
+  <p class="white-text">Si tienes cualquier duda puedes abrir un ticket en nuestro servidor de Discord. 
+    "soporte-tickets" en la sección Soporte, y haz click en el motivo de tu ticket. Los admins te atenderán a 
+    la mayor brevedad posible.</p>
+
+  <button class="discord-button" onclick="alert('Aun no tenemos Discord, pero pronto!')">Discord</button>
+</div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
