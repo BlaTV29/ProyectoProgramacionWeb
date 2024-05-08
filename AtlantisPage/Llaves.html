@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Llaves</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <style>
-         body {
+        body {
             font-family: Arial, sans-serif;
             text-align: center;
             padding: 20px;
@@ -16,23 +17,14 @@
             margin-bottom: 30px;
             color: #333; 
         }
-        .home-button-container {
-            display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #4b9cd3; 
+        .navbar {
+            background-color: #343a40 !important;
         }
-        .home-button {
-            font-size: 18px;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            background-color: transparent; 
-            border: none;
+        .navbar .navbar-brand, .navbar .nav-link {
+            color: #ffffff !important;
         }
-        .home-button:hover {
-            background-color: rgba(30, 144, 255, 0.3);
+        .navbar .nav-link:hover {
+            color: #ffffff !important;
         }
         .llave-container {
             display: inline-block;
@@ -100,9 +92,32 @@
     </style>
 </head>
 <body>
-    <div class="home-button-container">
-        <a href="Home.html" class="home-button">Home</a>
-    </div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">AtlantisCraft</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rangos.html">Rangos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="llaves.html">Llaves</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="historia.html">Historia</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
     <h1>Llaves</h1>
 
     <div class="llave-container" id="llave1">
@@ -148,9 +163,12 @@
             alert('Producto agregado al carrito chavales ostia');
         }
     </script>
-    
+
     <p></p>
     <a href="CarritoCompra.html" class="btn-carrito">Ir al Carrito de Compra</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
-

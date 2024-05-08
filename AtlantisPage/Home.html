@@ -5,23 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AtlantisCraft</title>
   <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background-color: black; 
-      color: white;
-      overflow-x: hidden; 
-    }
-    h1 {
-      text-align: center;
-      margin-top: 50px; 
-    }
-    img {
-      width: 500px; 
-      vertical-align: middle; 
-    }
-    .video-background {
-      position: fixed;
+    /* Estilos para el video de fondo */
+    #video-container {
+      position: absolute;
       top: 0;
       right: 0;
       bottom: 0;
@@ -29,7 +15,7 @@
       overflow: hidden;
       z-index: -1;
     }
-    .video-background video {
+    #video-container video {
       min-width: 100%;
       min-height: 100%;
       width: auto;
@@ -38,101 +24,83 @@
       top: 0;
       left: 0;
     }
-    .content-overlay {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      background-color: rgba(0, 0, 0, 0.8); 
-      padding: 20px;
+    /* Estilos para el formulario */
+    #formulario-container {
+      padding: 50px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
       border-radius: 10px;
-      text-align: center;
-    }
-    .content-overlay p {
-      margin-bottom: 20px;
-      font-size: 24px;
-    }
-    .gold-text {
-      color: gold; 
-    }
-    .red-text {
-      color: red; 
-    }
-    .blue-text {
-      color: dodgerblue; 
-    }
-    .white-text {
-      color: white; 
-    }
-    .overlay-title {
-      font-size: 28px;
-      font-weight: bold;
-    }
-   
-    .discord-button {
-      display: inline-block;
-      padding: 10px 20px;
-      font-size: 20px;
-      font-weight: bold;
-      color: white;
-      background-color: #7289DA; 
-      border: 2px solid #5865F2;
-      border-radius: 5px;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    .discord-button:hover {
-      background-color: #5865F2; 
+      margin-top: 50px; /* Espacio entre el video y el formulario */
     }
   </style>
   <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
-<div class="video-background">
+<div id="video-container">
     <video autoplay loop muted poster="poster.jpg">
       <source src="../Imagenes/Introserver.mp4" type="video/mp4">
       <source src="../Imagenes/Introserver.mp4" type="video/webm">
+      <!-- Si deseas agregar otro formato de video, puedes hacerlo aquí -->
       Tu navegador no soporta la etiqueta de video.
     </video>
 </div>
 
-<h1><img src="../Imagenes/AtlantiscraftLogo.png" alt="Imagen"></h1>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">AtlantisCraft</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mx-auto"> 
-      <li class="nav-item">
-        <a class="nav-link" href="Rangos.html">Rangos</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Llaves.html">Llaves</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Historia.html">Historia</a>
-      </li>
-    </ul>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="rangos.html">Rangos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="llaves.html">Llaves</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="historia.html">Historia</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<div class="content-overlay">
-  <p class="gold-text">play.Atlantiscraft.net</p>
-  <p class="gold-text">0 players connected</p>
-
-  <p class="overlay-title red-text">Politica de Reembolso</p>
-  <p class="white-text">Las compras en esta tienda no son reembolsables. Para solucionar cualquier duda o error puedes contactar con soporte en nuestro Discord.
-    Puedes encontrar más información en los términos y condiciones de Discord.</p>
-
-  <p class="overlay-title blue-text">Contacto</p>
-  <p class="white-text">Si tienes cualquier duda puedes abrir un ticket en nuestro servidor de Discord. 
-    "soporte-tickets" en la sección Soporte, y haz click en el motivo de tu ticket. Los admins te atenderán a 
-    la mayor brevedad posible.</p>
-
-  <button class="discord-button" onclick="alert('Aun no tenemos Discord, pero pronto!')">Discord</button>
+<!-- Formulario de registro -->
+<div id="formulario-container" class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="formulario">
+        <h2 class="mb-4">Únete a la beta de AtlantisCraft</h2>
+        <form>
+          <div class="form-group">
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" class="form-control" id="correo" required>
+          </div>
+          <div class="form-group">
+            <label for="nombreReal">Nombre real</label>
+            <input type="text" class="form-control" id="nombreReal">
+          </div>
+          <div class="form-group">
+            <label for="nombreJuego">Nombre en el juego *</label>
+            <input type="text" class="form-control" id="nombreJuego" required>
+          </div>
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad">
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
@@ -141,4 +109,3 @@
 
 </body>
 </html>
-
