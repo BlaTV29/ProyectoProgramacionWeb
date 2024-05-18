@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>Carrito de Compra</title>
     <style>
        body {
@@ -100,6 +101,15 @@
       left: 50%;
       transform: translate(-50%, -50%);
     }
+    .navbar {
+            background-color: #343a40 !important;
+        }
+        .navbar .navbar-brand, .navbar .nav-link {
+            color: #ffffff !important;
+        }
+        .navbar .nav-link:hover {
+            color: #ffffff !important;
+        }
     </style>
 </head>
 <body>
@@ -112,9 +122,33 @@
         </video>
       </div>
 
-    <div class="home-button-container">
-        <a href="Home.html" class="home-button">Home</a>
-    </div>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">AtlantisCraft</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rangos.html">Rangos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="llaves.html">Llaves</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="historia.html">Historia</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+
     <h1>Carrito de Compra</h1>
 
     <div id="carrito-container" class="product-section">
