@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrito de Compra</title>
+    <style>
+       body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #d6d6d6; 
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333; 
+        }
+        .product-section {
+            background: linear-gradient(to bottom right, #f5f5f5, #e0e0e0);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px;
+            text-align: left;
+        }
+        .product-info {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        .btn-delete {
+            background-color: #ff6347;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+        .btn-finish {
+            background-color: #32cd32;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 20px;
+            margin-right: 10px;
+        }
+        .btn-finish:hover {
+            background-color: #228b22;
+        }
+        .btn-back {
+            background-color: dodgerblue;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .btn-back:hover {
+            background-color: royalblue;
+        }
+        .home-button-container {
+            display: inline-block;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: dodgerblue;
+            margin-bottom: 20px;
+        }
+        .home-button {
+            font-size: 18px;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 10px;
+            background-color: transparent;
+            border: none;
+        }
+        .home-button:hover {
+            background-color: royalblue;
+        }
+        .video-background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-background video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay loop muted poster="poster.jpg">
+          <source src="../Imagenes/introhistoria.mp4" type="video/mp4">
+          <!-- Si deseas agregar otro formato de video, puedes hacerlo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+
+    <div class="home-button-container">
+        <a href="Home.html" class="home-button">Home</a>
+    </div>
+    <h1>Carrito de Compra</h1>
+
+    <div id="carrito-container" class="product-section">
+    </div>
+
+    <p id="cantidad-productos"></p>
+
+    <button onclick="finalizarCompra()" class="btn-finish">Finalizar Compra</button>
+    <a href="Home.html" class="btn-back">Volver</a>
+
+    <script>
+        function mostrarCarrito() {
+            const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+            const carritoContainer = document.getElementById('carrito-container');
+            const cantidadProductosElement = document.getElementById('cantidad-productos');
+            carritoContainer.innerHTML = '';
+
+            carrito.forEach((producto, index) => {
+                const productoHTML = `
+                    <div class="producto-container">
+                        <p><strong>Producto ${index + 1}</strong></p>
+                        <img src="${producto.imagen}" alt="${producto.nombre}" style="width: 100px; height: auto; margin-bottom: 10px;">
+                        <p>Nombre: ${producto.nombre}</p>
+                        <p>Dinero ganado: ${producto.dineroGanado}</p>
+                        <p>Armadura: ${producto.armadura}</p>
+                        <p>Herramientas: ${producto.herramientas}</p>
+                        ${producto.rango ? `<p>Rango: ${producto.rango}</p>` : ''} <!-- Mostrar la segunda descripción solo si existe el atributo 'rango' -->
+                        <button onclick="confirmarEliminar(${index})" class="btn-delete">Eliminar producto</button>
+                    </div>
+                    
+                `;
+                carritoContainer.innerHTML += productoHTML;
+            });
+
+            const cantidadProductos = carrito.length;
+            cantidadProductosElement.textContent = `Tienes ${cantidadProductos} producto(s) en tu carrito`;
+        }
+
+        function confirmarEliminar(index) {
+            const confirmacion = window.confirm('¿Estás seguro de que quieres eliminar este producto?');
+            if (confirmacion) {
+                const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+                carrito.splice(index, 1);
+                localStorage.setItem('carrito', JSON.stringify(carrito));
+                mostrarCarrito();
+            }
+        }
+
+        function finalizarCompra() {
+            alert('Aun no es tiempo que me depositen, pero gracias por intentarlo!');
+        }
+
+        mostrarCarrito(); 
+    </script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

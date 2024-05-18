@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de Llave Nivel 2</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #d6d6d6; 
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #ffffff; 
+        }
+        .volver-button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 40px;
+            text-decoration: none;
+        }
+        .volver-button:hover {
+            background-color: royalblue;
+        }
+        .llave-info-container {
+            background-color: rgb(255, 255, 255);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .llave-img {
+            width: 300px; 
+            border-radius: 10px;
+            margin-right: 20px;
+        }
+        .llave-info {
+            text-align: left;
+        }
+        .video-background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-background video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay loop muted poster="poster.jpg">
+          <source src="../Imagenes/introhistoria.mp4" type="video/mp4">
+          <!-- Si deseas agregar otro formato de video, puedes hacerlo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+
+
+    <h1>Información de Llave Nivel 2</h1>
+
+    <div class="llave-info-container">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave3.png?raw=true" alt="Llave nivel 2" class="llave-img">
+        <div class="llave-info">
+            <p>300.000$</p>
+            <p>Armadura de diamante </p>
+            <p>Herramientas de diamante </p>
+            <p>Rango temporal: Poseidón [24H]</p>
+        </div>
+    </div>
+
+    <a href="Llaves.html" class="volver-button">Volver</a>
+    <a href="Home.html" class="volver-button" style="background-color: #4b9cd3;">Volver al inicio</a>
+
+</body>
+</html>
+
+</html>

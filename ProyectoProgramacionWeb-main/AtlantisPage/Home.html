@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AtlantisCraft</title>
+  <style>
+    /* Estilos para el video de fondo */
+    #video-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      z-index: -1;
+    }
+    #video-container video {
+      min-width: 100%;
+      min-height: 100%;
+    }
+    /* Estilos para el formulario */
+    #formulario-container {
+      padding: 50px;
+      position: relative;
+      z-index: 1;
+      background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+      border-radius: 10px;
+      margin-top: 50px; /* Espacio entre el video y el formulario */
+    }
+    .carrusel {
+      display: flex;
+      flex-direction: column;
+      gap: 50px;
+      padding: 300px 0; /* Añadido para separación superior e inferior */
+    }
+    .alert-success {
+      position: absolute;
+    }
+    .close {
+      position: absolute;
+      top: 0;
+      right: 0;
+      padding: 0.75rem 1.25rem;
+      color: inherit;
+    }
+
+  </style>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div id="video-container">
+    <video autoplay loop muted poster="poster.jpg">
+      <source src="../Imagenes/Introserver.mp4" type="video/mp4">
+      <source src="../Imagenes/Introserver.mp4" type="video/webm">
+      <!-- Si deseas agregar otro formato de video, puedes hacerlo aquí -->
+      Tu navegador no soporta la etiqueta de video.
+    </video>
+</div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">AtlantisCraft</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="rangos.html">Rangos</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="llaves.html">Llaves</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="historia.html">Historia</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Imagen de AtlantisCraft -->
+<center>
+  <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/raw/main/Imagenes/AtlantiscraftLogo.png" alt="AtlantisCraft Logo" class="AtlantiscraftLogo-img">
+</center>
+
+<!-- Formulario de registro -->
+<div class="carrusel">
+<div id="formulario-container" class="container">
+  <div class="row justify-content-center">
+    <div class="col-md-6">
+      <div class="formulario">
+        <h2 class="mb-4">Únete a la beta de AtlantisCraft</h2>
+        <form id="registro-form">
+          <div class="form-group">
+            <label for="correo">Correo electrónico *</label>
+            <input type="email" class="form-control" id="correo" required>
+          </div>
+          <div class="form-group">
+            <label for="nombreReal">Nombre real</label>
+            <input type="text" class="form-control" id="nombreReal" required>
+          </div>
+          <div class="form-group">
+            <label for="nombreJuego">Nombre en el juego *</label>
+            <input type="text" class="form-control" id="nombreJuego" required>
+          </div>
+          <div class="form-group">
+            <label for="edad">Edad</label>
+            <input type="number" class="form-control" id="edad">
+          </div>
+          <button type="submit" class="btn btn-primary">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script>
+  document.getElementById('nombreReal').addEventListener('input', function(event) {
+    // Filtrar los números y caracteres no permitidos
+    this.value = this.value.replace(/[^A-Za-zñÑáéíóúÁÉÍÓÚ\s]/g, '');
+  });
+
+  // Capturar el evento de envío del formulario
+  document.getElementById('registro-form').addEventListener('submit', function(event) {
+    event.preventDefault(); // Evitar el envío normal del formulario
+
+    // Crear la alerta de Bootstrap
+    var alerta = document.createElement('div');
+    alerta.classList.add('alert', 'alert-success');
+    alerta.setAttribute('role', 'alert');
+    alerta.textContent = '¡El formulario se ha enviado correctamente!';
+
+    // Crear el botón de cierre
+    var botonCerrar = document.createElement('button');
+    botonCerrar.setAttribute('type', 'button');
+    botonCerrar.classList.add('close');
+    botonCerrar.setAttribute('data-dismiss', 'alert');
+    botonCerrar.setAttribute('aria-label', 'Close');
+
+    // Crear el icono de cierre
+    var iconoCerrar = document.createElement('span');
+    iconoCerrar.setAttribute('aria-hidden', 'true');
+    iconoCerrar.innerHTML = '&times;';
+
+    // Agregar el icono de cierre al botón de cierre
+    botonCerrar.appendChild(iconoCerrar);
+
+    // Agregar el botón de cierre a la alerta
+    alerta.appendChild(botonCerrar);
+    
+    // Insertar la alerta antes del formulario
+    var formulario = document.getElementById('formulario-container');
+    formulario.parentNode.insertBefore(alerta, formulario);
+  });
+</script>
+</div>
+</body>
+</html>
