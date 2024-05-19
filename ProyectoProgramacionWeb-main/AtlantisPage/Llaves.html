@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Llaves</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-color: #d6d6d6; 
+        }
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #333; 
+        }
+        .navbar {
+            background-color: #343a40 !important;
+        }
+        .navbar .navbar-brand, .navbar .nav-link {
+            color: #ffffff !important;
+        }
+        .navbar .nav-link:hover {
+            color: #ffffff !important;
+        }
+        .llave-container {
+            display: inline-block;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+            margin-bottom: 20px;
+        }
+        .llave-img {
+            width: 200px; 
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+        .llave-nombre {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 18px;
+            border: none;
+            background-color: dodgerblue;
+            color: white;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 10px; 
+        }
+        button:hover {
+            background-color: royalblue;
+        }
+        .info-button-container {
+            display: inline-block;
+            margin-top: 5px;
+        }
+        .info-button {
+            font-size: 16px;
+            background-color: #bbb; 
+            color: white;
+            padding: 8px 12px; 
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+        }
+        .info-button:hover {
+            background-color: #999; 
+        }
+        .btn-carrito {
+            font-size: 18px;
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            text-decoration: none;
+            margin-top: 20px;
+            display: inline-block;
+            border: none;
+        }
+        .btn-carrito:hover {
+            background-color: #45a049;
+        }
+        .video-background {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+      z-index: -1;
+    }
+    .video-background video {
+      min-width: 100%;
+      min-height: 100%;
+      width: auto;
+      height: auto;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+    </style>
+</head>
+<body>
+
+    <div class="video-background">
+        <video autoplay loop muted poster="poster.jpg">
+          <source src="../Imagenes/introhistoria.mp4" type="video/mp4">
+          <!-- Si deseas agregar otro formato de video, puedes hacerlo aquí -->
+          Tu navegador no soporta la etiqueta de video.
+        </video>
+      </div>
+
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">AtlantisCraft</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="home.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="rangos.html">Rangos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="llaves.html">Llaves</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="historia.html">Historia</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <h1>Llaves</h1>
+
+    <div class="llave-container" id="llave1">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave.png?raw=true" alt="Llave nivel 1" class="llave-img">
+        <div class="llave-nombre">Llave nivel 1</div>
+        <button onclick="agregarAlCarrito('Llave nivel 1', '100000', 'Armadura de hierro', 'Herramientas de hierro', 'Orión[24H]', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave.png?raw=true')">Comprar</button>
+        <div class="info-button-container">
+            <a href="InformacionLlave1.html" class="info-button">Info</a>
+        </div>
+    </div>
+
+    <div class="llave-container" id="llave2">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave3.png?raw=true" alt="Llave nivel 2" class="llave-img">
+        <div class="llave-nombre">Llave nivel 2</div>
+        <button onclick="agregarAlCarrito('Llave nivel 2', '300000', 'Armadura de diamante', 'Herramientas de diamante', 'Poseidón[24H]', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave3.png?raw=true')">Comprar</button>
+        <div class="info-button-container">
+            <a href="InformacionLlave2.html" class="info-button">Info</a>
+        </div>
+    </div>
+
+    <div class="llave-container" id="llave3">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave2.png?raw=true" alt="Llave nivel 3" class="llave-img">
+        <div class="llave-nombre">Llave nivel 3</div>
+        <button onclick="agregarAlCarrito('Llave nivel 3', '700000', 'Armadura de netherite', 'Herramientas de netherite', 'Pegaso[24H]', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave2.png?raw=true')">Comprar</button>
+        <div class="info-button-container">
+            <a href="InformacionLlave3.html" class="info-button">Info</a>
+        </div>
+    </div>
+
+    <script>
+        function agregarAlCarrito(nombre, dineroGanado, armadura, herramientas, rango, imagen) {
+            let carrito = localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
+            const nuevoProducto = {
+                nombre: nombre,
+                dineroGanado: dineroGanado,
+                armadura: armadura,
+                herramientas: herramientas,
+                rango: rango,
+                imagen: imagen 
+            };
+            carrito.push(nuevoProducto);
+            localStorage.setItem('carrito', JSON.stringify(carrito));
+            alert('Producto agregado al carrito chavales ostia');
+        }
+    </script>
+
+    <p></p>
+    <a href="CarritoCompra.html" class="btn-carrito">Ir al Carrito de Compra</a>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
