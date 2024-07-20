@@ -1,3 +1,6 @@
+<img align="right" src="https://camo.githubusercontent.com/93da02423633e56fb44ccbee995029e564b508ddeb3bf2d832f72325384f938e/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d616c7369616d266c6162656c3d56697369746f727326636f6c6f723d306537356236267374796c653d666c6174" alt="Visitantes del proyecto" data-canonical-src="https://komarev.com/ghpvc/?username=alsiam&amp;label=Visitors&amp;color=0e75b6&amp;style=flat" style="max-width: 100%;">
+
+
 # Proyecto AtlantisCraft
 
 Este proyecto es una página web para **AtlantisCraft**, donde los usuarios pueden ver diferentes rangos disponibles, visualizar imágenes de estos rangos y agregarlos a un carrito de compras virtual.
@@ -55,10 +58,8 @@ Las contribuciones son bienvenidas. Si deseas colaborar:
 
 ## Contacto
 
-Para más información, contacta a [tu nombre] en [tu correo electrónico].
+Para más información, contacta a Benjamin Lackington  en Be.lackington@duocuc.cl.
 
 ---
-
-<img align="right" src="https://camo.githubusercontent.com/93da02423633e56fb44ccbee995029e564b508ddeb3bf2d832f72325384f938e/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d616c7369616d266c6162656c3d56697369746f727326636f6c6f723d306537356236267374796c653d666c6174" alt="Profile visitor" data-canonical-src="https://komarev.com/ghpvc/?username=alsiam&amp;label=Visitors&amp;color=0e75b6&amp;style=flat" style="max-width: 100%;">
 
 
