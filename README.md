@@ -1,25 +1,28 @@
 <img align="right" src="https://camo.githubusercontent.com/93da02423633e56fb44ccbee995029e564b508ddeb3bf2d832f72325384f938e/68747470733a2f2f6b6f6d617265762e636f6d2f67687076632f3f757365726e616d653d616c7369616d266c6162656c3d56697369746f727326636f6c6f723d306537356236267374796c653d666c6174" alt="Visitantes del proyecto" data-canonical-src="https://komarev.com/ghpvc/?username=alsiam&amp;label=Visitors&amp;color=0e75b6&amp;style=flat" style="max-width: 100%;">
 
-
 # Proyecto AtlantisCraft
 
-Este proyecto es una página web para **AtlantisCraft**, donde los usuarios pueden ver diferentes rangos disponibles, visualizar imágenes de estos rangos y agregarlos a un carrito de compras virtual.
+Esta es una página web llamada **AtlantisCraft**, donde los usuarios pueden comprar rangos disponibles y llaves en un servidor de Minecraft.
 
 ## Descripción
 
-La página está construida usando HTML, CSS y JavaScript. Utiliza Bootstrap para el diseño responsivo y tiene un video de fondo para un efecto visual atractivo.
+La página está construida usando HTML, CSS y JavaScript. Utiliza Bootstrap para el diseño responsivo, teniendo una implementación atractiva a la vista.
 
 ## Estructura del Proyecto
 
-- **index.html**: Página principal con un carrusel de rangos.
-- **CarritoCompra.html**: Página para visualizar el carrito de compras (a implementar).
-- **Imágenes**: Contiene imágenes relacionadas con los rangos.
+- **index.html**: Página principal con el carrusel de rangos y enlaces a las diferentes secciones.
+- **Llaves.html**: Página para visualizar y comprar llaves.
+- **Rangos.html**: Página para visualizar y comprar rangos.
+- **Historia.html**: Página que cuenta la historia del proyecto y del servidor.
+- **CarritoCompra.html**: Página para visualizar el carrito de compras
+- **Estilos**: Contiene los estilos de la pagina
+- **Imágenes**: Contiene imágenes relacionadas con los rangos y llaves.
 
 ## Características
 
 - **Video de fondo**: Un video se reproduce en segundo plano, lo que mejora la experiencia visual.
 - **Carrusel de rangos**: Presenta imágenes de rangos que los usuarios pueden agregar a su carrito de compras.
-- **Carrito de compras**: Los usuarios pueden agregar rangos al carrito que se almacena en el almacenamiento local del navegador.
+- **Carrito de compras**: Los usuarios pueden agregar rangos y llaves al carrito que se almacena en el almacenamiento local del navegador.
 
 ## Lenguajes ocupados para el código
 
@@ -42,9 +45,10 @@ Para usar el proyecto en tu entorno local:
 
 ## Uso
 
-1. Visita la página principal para ver el carrusel de rangos.
-2. Haz clic en los botones "Comprar" para agregar rangos al carrito.
-3. Accede al carrito de compras desde el botón "Ir al Carrito de Compra".
+1. Visita la página para comprar rangos para el servidor
+2. Usa los enlaces para acceder a la tienda de llaves, tienda de rangos, y la historia del proyecto.
+3. Haz clic en los botones "Comprar" para agregar rangos y llaves al carrito.
+4. Accede al carrito de compras desde el botón correspondiente.
 
 ## Contribuciones
 
@@ -58,8 +62,6 @@ Las contribuciones son bienvenidas. Si deseas colaborar:
 
 ## Contacto
 
-Para más información, contacta a Benjamin Lackington  en Be.lackington@duocuc.cl.
+Para más información, contacta a Benjamin Lackington en Be.lackington@duocuc.cl.
 
 ---
-
-
