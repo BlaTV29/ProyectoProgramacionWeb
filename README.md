@@ -1,1 +1,2 @@
-El victor la chuspa
+<h2 tabindex="-1" class="heading-element" dir="auto">Lenguajes ocupados para el codigo</h2>
+<img src="https://camo.githubusercontent.com/ce6d598510de1a8ecf703ff8517155cecc610a4de25491ed71310105f8a1f12b/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f4a6176617363726970742d4630444234463f7374796c653d666f722d7468652d6261646765266c6162656c436f6c6f723d626c61636b266c6f676f3d6a617661736372697074266c6f676f436f6c6f723d463044423446" alt="Javascript" data-canonical-src="https://img.shields.io/badge/Javascript-F0DB4F?style=for-the-badge&amp;labelColor=black&amp;logo=javascript&amp;logoColor=F0DB4F" style="max-width: 100%;">
