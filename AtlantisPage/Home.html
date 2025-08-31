@@ -4,80 +4,196 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AtlantisCraft</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    /* Estilos para el video de fondo */
+    /* Video de fondo */
     #video-container {
-      position: absolute;
+      position: fixed;
       top: 0;
-      right: 0;
-      bottom: 0;
       left: 0;
+      height: 100%;
+      width: 100%;
       overflow: hidden;
-      z-index: -1;
+      z-index: -2;
     }
     #video-container video {
       min-width: 100%;
       min-height: 100%;
-      width: auto;
-      height: auto;
-      position: absolute;
+      object-fit: cover;
+    }
+    /* Capa oscura sobre el video */
+    #overlay {
+      position: fixed;
       top: 0;
       left: 0;
+      height: 100%;
+      width: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: -1;
     }
-    /* Estilos para el formulario */
-    #formulario-container {
-      padding: 50px;
+    /* Navbar personalizado */
+    .custom-navbar {
+      background: linear-gradient(90deg, #0d1b2a, #1b263b) !important;
+      padding: 15px 0;
+      border-bottom: 2px solid #3a9cff;
+      backdrop-filter: blur(8px);
+    }
+    .custom-navbar .nav-link {
+      color: #e0e6ed !important;
+      margin: 0 12px;
+      font-weight: 500;
       position: relative;
-      z-index: 1;
-      background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+      transition: 0.3s;
+    }
+    .custom-navbar .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      display: block;
+      margin-top: 5px;
+      right: 0;
+      background: #3a9cff;
+      transition: width 0.3s ease;
+    }
+    .custom-navbar .nav-link:hover::after {
+      width: 100%;
+      left: 0;
+      background: #3a9cff;
+    }
+    .custom-navbar .btn-login {
+      background: #3a9cff;
+      color: #fff !important;
+      padding: 6px 15px;
+      border-radius: 20px;
+      transition: 0.3s;
+    }
+    .custom-navbar .btn-login:hover {
+      background: #1f6fb2;
+    }
+    /* Logo del centro */
+    .navbar-brand img {
+      height: 50px;
+    }
+    /* Dropdown Tienda */
+    .dropdown-menu {
+      background: #1b263b;
+    }
+    .dropdown-item {
+      color: #e0e6ed !important;
+    }
+    .dropdown-item:hover {
+      background-color: #3a9cff;
+      color: #fff !important;
+    }
+    /* Formulario */
+    #formulario-container {
+      padding: 40px;
+      margin-top: 80px;
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
+      animation: fadeIn 1s ease;
+    }
+    h2 {
+      font-weight: bold;
+      text-align: center;
+      color: #333;
+    }
+    .form-control {
       border-radius: 10px;
-      margin-top: 50px; /* Espacio entre el video y el formulario */
+      transition: all 0.3s ease;
+    }
+    .form-control:focus {
+      border-color: #0dcaf0;
+      box-shadow: 0 0 10px rgba(13, 202, 240, 0.5);
+    }
+    .btn-enviar {
+      width: 100%;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 30px;
+      background: linear-gradient(45deg, #007bff, #0dcaf0);
+      border: none;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .btn-enviar:hover {
+      transform: translateY(-3px);
+      box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5);
+    }
+    /* Animación */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
-  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 
+<!-- Video de fondo -->
 <div id="video-container">
-    <video autoplay loop muted poster="poster.jpg">
-      <source src="../Imagenes/Introserver.mp4" type="video/mp4">
-      <source src="../Imagenes/Introserver.mp4" type="video/webm">
-      <!-- Si deseas agregar otro formato de video, puedes hacerlo aquí -->
-      Tu navegador no soporta la etiqueta de video.
-    </video>
+  <video autoplay loop muted>
+    <source src="../Imagenes/Introserver.mp4" type="video/mp4">
+    <source src="../Imagenes/Introserver.mp4" type="video/webm">
+    Tu navegador no soporta la etiqueta de video.
+  </video>
 </div>
+<div id="overlay"></div>
 
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar">
   <div class="container">
-    <a class="navbar-brand" href="#">AtlantisCraft</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" 
+      data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+      aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav ml-auto">
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <!-- Links izquierda -->
+      <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="home.html">Home</a>
+          <a class="nav-link active" href="Home.html">Inicio</a>
+        </li>
+        <!-- Dropdown Tienda -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="tiendaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Tienda
+          </a>
+          <div class="dropdown-menu" aria-labelledby="tiendaDropdown">
+            <a class="dropdown-item" href="Llaves.html">Llaves</a>
+            <a class="dropdown-item" href="Rangos.html">Rangos</a>
+          </div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="rangos.html">Rangos</a>
+          <a class="nav-link" href="Historia.html">Historia</a>
+        </li>
+      </ul>
+
+      <!-- Logo centro -->
+      <a class="navbar-brand mx-auto" href="#">
+        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave.png?raw=true" alt="Logo AtlantisCraft">
+      </a>
+
+      <!-- Links derecha -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Comunidad</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="llaves.html">Llaves</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="historia.html">Historia</a>
+          <a class="nav-link btn-login" href="Login.html">Login</a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
 
-<!-- Formulario de registro -->
-<div id="formulario-container" class="container">
+<!-- Formulario -->
+<div class="container">
   <div class="row justify-content-center">
     <div class="col-md-6">
-      <div class="formulario">
+      <div id="formulario-container">
         <h2 class="mb-4">Únete a la beta de AtlantisCraft</h2>
         <form>
           <div class="form-group">
@@ -96,7 +212,7 @@
             <label for="edad">Edad</label>
             <input type="number" class="form-control" id="edad">
           </div>
-          <button type="submit" class="btn btn-primary">Enviar</button>
+          <button type="submit" class="btn btn-enviar">Enviar</button>
         </form>
       </div>
     </div>
@@ -106,6 +222,5 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
 </body>
 </html>

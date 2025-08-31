@@ -1,182 +1,135 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RANGOS</title>
-    <style>
-         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 20px;
-            background-color: #d6d6d6; 
-        }
-        h1 {
-            font-size: 36px;
-            margin-bottom: 30px;
-            color: #333; 
-        }
-        .home-button-container {
-            display: inline-block;
-            padding: 10px;
-            border-radius: 10px;
-            background-color: #4b9cd3; 
-        }
-        .home-button {
-            font-size: 18px;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 10px;
-            background-color: transparent; 
-            border: none;
-        }
-        .home-button:hover {
-            background-color: rgba(30, 144, 255, 0.3);
-        }
-        .llave-container {
-            display: inline-block;
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
-            margin-bottom: 20px;
-        }
-        .rango-img {
-            width: 200px; 
-            border-radius: 10px;
-            margin-bottom: 10px;
-        }
-        .Rango-nombre {
-            font-size: 24px;
-            font-weight: bold;
-            color: #333;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 18px;
-            border: none;
-            background-color: dodgerblue;
-            color: white;
-            cursor: pointer;
-            border-radius: 5px;
-            margin-top: 10px; 
-        }
-        button:hover {
-            background-color: royalblue;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rangos - AtlantisCraft</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: linear-gradient(135deg, #141e30, #243b55);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
 
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 40px;
+      font-weight: bold;
+      text-shadow: 2px 2px 6px rgba(0,0,0,0.6);
+    }
 
-        .info-button {
-            font-size: 16px;
-            background-color: #bbb; 
-            color: white;
-            padding: 8px 12px; 
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-        }
-        .info-button:hover {
-            background-color: #999; 
-        }
-        .btn-carrito {
-            font-size: 18px;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            text-decoration: none;
-            margin-top: 20px;
-            display: inline-block;
-            border: none;
-        }
-        .btn-carrito:hover {
-            background-color: #45a049;
-        }
+    .card {
+      background: #1f2a40;
+      border: none;
+      border-radius: 15px;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
 
-        .carrusel {
-            display: flex;
-            flex-wrap: nowrap;
-            overflow: auto;
-            scroll-padding: 0;
-            gap: 1em;
-        }
-        .elemento {
-            object-fit: cover;
-            flex: 0 0 35%;
-            margin: 0 50px;
-            scroll-snap-align: start;
-            user-select: none;
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.4);
+    }
 
-            display: inline-block;
-            background-color: #d6d6d6;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 4px rgba(239, 239, 239, 0.1); 
-            margin-bottom: 20px;
-           user-select: none;
-        }
+    .rango-img {
+      border-radius: 10px;
+      max-height: 200px;
+      object-fit: contain;
+      padding: 10px;
+    }
 
+    .btn-buy {
+      background: linear-gradient(90deg, #00c6ff, #0072ff);
+      border: none;
+      border-radius: 10px;
+      padding: 10px 20px;
+      font-size: 1.1rem;
+      font-weight: bold;
+    }
 
+    .btn-buy:hover {
+      background: linear-gradient(90deg, #0072ff, #00c6ff);
+    }
 
-    </style>
+    .btn-home {
+      background: #ffc107;
+      border-radius: 50px;
+      padding: 10px 25px;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-decoration: none;
+      display: inline-block;
+      color: #000;
+    }
+
+    .btn-carrito {
+      margin-top: 30px;
+      padding: 12px 25px;
+      font-size: 1.1rem;
+      border-radius: 12px;
+    }
+  </style>
 </head>
 <body>
-    <div class="home-button-container">
-        <a href="Home.html" class="home-button">Home</a>
-    </div>
-    <h1>RANGOS</h1>
+  
+  <a href="Home.html" class="btn-home">🏠 Home</a>
+  <h1>Rangos Disponibles</h1>
 
-<div class="carrusel">
+  <div class="container">
+    <div class="row g-4 justify-content-center">
+      
+      <!-- Rango ORION -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/orion%20logo.png?raw=true" alt="Rango Orion" class="rango-img card-img-top">
+          <div class="card-body">
+            <h4 class="card-title text-white">ORION X MES</h4>
+            <button class="btn btn-buy w-100" onclick="agregarAlCarrito('ORION y color verde en tu nombre', 'no hay', 'hierro encantada', 'de moderador', 'MODERADOR NV1', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/orion%20logo.png?raw=true')">Comprar</button>
+          </div>
+        </div>
+      </div>
 
-    <div class="elemento">
-    <div class="llave-container" id="llave1">
-        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/orion logo.png?raw=true" alt="rango orion" class="rango-img">
-        <div class="Rango-nombre">ORION [PERMANENTE]</div>
-        <button onclick="agregarAlCarrito('ORION y color verde en tu nombre', 'no hay', 'hierro encantada', 'de moderador', 'MODERADOR NV1', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/orion logo.png?raw=true')">Comprar</button>
- 
-    </div>
-    </div>
-    <div class="elemento">
-    <div class="llave-container" id="llave2">
-        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/pegaso logo.png?raw=true" alt="rango orion" class="rango-img">
-        <div class="Rango-nombre">PEGASO [PERMANENTE]</div>
-        <button onclick="agregarAlCarrito('PEGASO y color amarillo en tu nombre', 'no hay', 'netherite encantada', 'de moderador', 'MODERADOR NV3', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/pegaso logo.png?raw=true')">Comprar</button>
-    </div>
+      <!-- Rango PEGASO -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/pegaso%20logo.png?raw=true" alt="Rango Pegaso" class="rango-img card-img-top">
+          <div class="card-body">
+            <h4 class="card-title text-white">PEGASO X MES</h4>
+            <button class="btn btn-buy w-100" onclick="agregarAlCarrito('PEGASO y color amarillo en tu nombre', 'no hay', 'netherite encantada', 'de moderador', 'MODERADOR NV3', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/pegaso%20logo.png?raw=true')">Comprar</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rango POSEIDON -->
+      <div class="col-md-4">
+        <div class="card p-3">
+          <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/poseidon%20logo.png?raw=true" alt="Rango Poseidon" class="rango-img card-img-top">
+          <div class="card-body">
+             <h4 class="card-title text-white">POSEIDON X MES</h4>
+            <button class="btn btn-buy w-100" onclick="agregarAlCarrito('POSEIDON y color azul en tu nombre', 'no hay', 'diamante encantada', 'de moderador', 'MODERADOR NV2', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/poseidon%20logo.png?raw=true')">Comprar</button>
+          </div>
+        </div>
+      </div>
+
     </div>
 
-    <div class="elemento">
-    <div class="llave-container" id="llave3">
-        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/poseidon logo.png?raw=true" alt="rango poseidon" class="rango-img">
-        <div class="Rango-nombre">POSEIDON [PERMANENTE]</div>
-        <button onclick="agregarAlCarrito('POSEIDON y color azul en tu nombre', 'no hay', 'diamante encantada', 'de moderador', 'MODERADOR NV2', 'https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/poseidon logo.png?raw=true')">Comprar</button>
-    </div>
-    </div>
-</div>
+    <a href="CarritoCompra.html" class="btn btn-success btn-carrito">🛒 Ir al Carrito de Compra</a>
+  </div>
 
-<script>
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
     function agregarAlCarrito(nombre, dineroGanado, armadura, herramientas, rango, imagen) {
-        let carrito = localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
-        const nuevoProducto = {
-            nombre: nombre,
-            dineroGanado: dineroGanado,
-            armadura: armadura,
-            herramientas: herramientas,
-            rango: rango,
-            imagen: imagen 
-        };
-        carrito.push(nuevoProducto);
-        localStorage.setItem('carrito', JSON.stringify(carrito));
-        alert('Producto agregado al carrito chavales ostia');
+      let carrito = localStorage.getItem('carrito') ? JSON.parse(localStorage.getItem('carrito')) : [];
+      const nuevoProducto = { nombre, dineroGanado, armadura, herramientas, rango, imagen };
+      carrito.push(nuevoProducto);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      alert('✅ Producto agregado al carrito');
     }
-</script>
-    
-    <p></p>
-    <a href="CarritoCompra.html" class="btn-carrito">Ir al Carrito de Compra</a>
-
+  </script>
 </body>
-
 </html>
-
