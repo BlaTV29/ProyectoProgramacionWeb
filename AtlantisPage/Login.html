@@ -4,66 +4,161 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Login - AtlantisCraft</title>
-  <!-- Bootstrap -->
+  <!-- Bootstrap 5 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+/* Navbar personalizado */
+.custom-navbar {
+  background: linear-gradient(90deg, #0d1b2a, #1b263b);
+  padding: 20px 0;
+  border-bottom: 2px solid #3a9cff;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 5;
+}
+.custom-navbar .nav-link {
+  color: #e0e6ed !important;
+  margin: 0 12px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+.custom-navbar .nav-link:hover {
+  color: #3a9cff !important;
+}
+.custom-navbar .btn-login {
+  background: #3a9cff;
+  color: #fff !important;
+  padding: 6px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.custom-navbar .btn-login:hover {
+  background: #1f6fb2;
+}
+
+/* Logo grande con animación */
+.navbar-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -30%);
+  height: 120px;
+  max-height: 150px;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-logo:hover {
+  transform: translate(-50%, -30%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(58, 156, 255, 0.5);
+}
+  </style>
 </head>
 <body class="bg-dark text-light">
 
-  <div class="container d-flex align-items-center justify-content-center vh-100">
-    <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
-      <h3 class="text-center mb-3">AtlantisCraft</h3>
-      
-      <!-- Nav para alternar entre Login y Registro -->
-      <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-          <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button">Iniciar Sesión</button>
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg custom-navbar">
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+      data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+      aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+      <!-- Links izquierda -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="Home.html">Inicio</a>
         </li>
-        <li class="nav-item" role="presentation">
-          <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button">Registrarse</button>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="tiendaDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Tienda
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="tiendaDropdown">
+            <li><a class="dropdown-item" href="Llaves.html">Llaves</a></li>
+            <li><a class="dropdown-item" href="Rangos.html">Rangos</a></li>
+          </ul>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="Historia.html">Historia</a>
         </li>
       </ul>
 
-      <!-- Contenido de Login / Registro -->
-      <div class="tab-content" id="pills-tabContent">
-        <!-- Login -->
-        <div class="tab-pane fade show active" id="pills-login" role="tabpanel">
-          <form>
-            <div class="mb-3">
-              <label for="loginEmail" class="form-label">Correo</label>
-              <input type="email" class="form-control" id="loginEmail" placeholder="Ingresa tu correo">
-            </div>
-            <div class="mb-3">
-              <label for="loginPassword" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="loginPassword" placeholder="Ingresa tu contraseña">
-            </div>
-            <button type="submit" class="btn btn-primary w-100">Ingresar</button>
-          </form>
-        </div>
+      <!-- Logo centro -->
+      <a class="navbar-brand mx-auto" href="#">
+        <img class="navbar-logo" src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/Atlantis_Png.png?raw=true" alt="Logo AtlantisCraft">
+      </a>
 
-        <!-- Registro -->
-        <div class="tab-pane fade" id="pills-register" role="tabpanel">
-          <form>
-            <div class="mb-3">
-              <label for="registerName" class="form-label">Nombre</label>
-              <input type="text" class="form-control" id="registerName" placeholder="Ingresa tu nombre">
-            </div>
-            <div class="mb-3">
-              <label for="registerEmail" class="form-label">Correo</label>
-              <input type="email" class="form-control" id="registerEmail" placeholder="Ingresa tu correo">
-            </div>
-            <div class="mb-3">
-              <label for="registerPassword" class="form-label">Contraseña</label>
-              <input type="password" class="form-control" id="registerPassword" placeholder="Crea una contraseña">
-            </div>
-            <button type="submit" class="btn btn-success w-100">Registrarse</button>
-          </form>
-        </div>
+      <!-- Links derecha -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="#">Comunidad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link btn-login" href="Login.html">Login</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- Formulario centrado -->
+<div class="container d-flex align-items-center justify-content-center vh-100" style="margin-top: 80px;">
+  <div class="card shadow-lg p-4" style="max-width: 400px; width: 100%;">
+    <h3 class="text-center mb-3">AtlantisCraft</h3>
+    
+    <!-- Nav para alternar entre Login y Registro -->
+    <ul class="nav nav-pills nav-justified mb-3" id="pills-tab" role="tablist">
+      <li class="nav-item" role="presentation">
+        <button class="nav-link active" id="pills-login-tab" data-bs-toggle="pill" data-bs-target="#pills-login" type="button">Iniciar Sesión</button>
+      </li>
+      <li class="nav-item" role="presentation">
+        <button class="nav-link" id="pills-register-tab" data-bs-toggle="pill" data-bs-target="#pills-register" type="button">Registrarse</button>
+      </li>
+    </ul>
+
+    <!-- Contenido de Login / Registro -->
+    <div class="tab-content" id="pills-tabContent">
+      <!-- Login -->
+      <div class="tab-pane fade show active" id="pills-login" role="tabpanel">
+        <form>
+          <div class="mb-3">
+            <label for="loginEmail" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="loginEmail" placeholder="Ingresa tu correo">
+          </div>
+          <div class="mb-3">
+            <label for="loginPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="loginPassword" placeholder="Ingresa tu contraseña">
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Ingresar</button>
+        </form>
+      </div>
+
+      <!-- Registro -->
+      <div class="tab-pane fade" id="pills-register" role="tabpanel">
+        <form>
+          <div class="mb-3">
+            <label for="registerName" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="registerName" placeholder="Ingresa tu nombre">
+          </div>
+          <div class="mb-3">
+            <label for="registerEmail" class="form-label">Correo</label>
+            <input type="email" class="form-control" id="registerEmail" placeholder="Ingresa tu correo">
+          </div>
+          <div class="mb-3">
+            <label for="registerPassword" class="form-label">Contraseña</label>
+            <input type="password" class="form-control" id="registerPassword" placeholder="Crea una contraseña">
+          </div>
+          <button type="submit" class="btn btn-success w-100">Registrarse</button>
+        </form>
       </div>
     </div>
   </div>
+</div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

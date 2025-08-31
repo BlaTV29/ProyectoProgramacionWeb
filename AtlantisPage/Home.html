@@ -21,6 +21,7 @@
       min-height: 100%;
       object-fit: cover;
     }
+
     /* Capa oscura sobre el video */
     #overlay {
       position: fixed;
@@ -31,61 +32,81 @@
       background: rgba(0, 0, 0, 0.5);
       z-index: -1;
     }
-    /* Navbar personalizado */
-    .custom-navbar {
-      background: linear-gradient(90deg, #0d1b2a, #1b263b) !important;
-      padding: 15px 0;
-      border-bottom: 2px solid #3a9cff;
-      backdrop-filter: blur(8px);
-    }
-    .custom-navbar .nav-link {
-      color: #e0e6ed !important;
-      margin: 0 12px;
-      font-weight: 500;
-      position: relative;
-      transition: 0.3s;
-    }
-    .custom-navbar .nav-link::after {
-      content: '';
+
+/* Navbar personalizado */
+.custom-navbar {
+  background: linear-gradient(90deg, #0d1b2a, #1b263b);
+  padding: 25px 0;
+  border-bottom: 2px solid #3a9cff;
+  backdrop-filter: blur(8px);
+  position: relative;
+  z-index: 5;
+}
+.custom-navbar .nav-link {
+  color: #e0e6ed !important;
+  margin: 0 12px;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s;
+}
+.custom-navbar .nav-link:hover {
+  color: #3a9cff !important;
+}
+.custom-navbar .btn-login {
+  background: #3a9cff;
+  color: #fff !important;
+  padding: 6px 15px;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+.custom-navbar .btn-login:hover {
+  background: #1f6fb2;
+}
+
+/* Logo grande con animación */
+.navbar-logo {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translate(-50%, -30%);
+  height: 30px;
+  max-height: 50px;
+  z-index: 10;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.navbar-logo:hover {
+  transform: translate(-50%, -30%) scale(1.1);
+  box-shadow: 0 5px 15px rgba(58, 156, 255, 0.5);
+}
+
+    /* Logo centrado y proporcional a la navbar */
+    .navbar-logo {
       position: absolute;
-      width: 0;
-      height: 2px;
-      display: block;
-      margin-top: 5px;
-      right: 0;
-      background: #3a9cff;
-      transition: width 0.3s ease;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -30%);
+      height: 180px;       /* tamaño proporcional a la navbar */
+      max-height: 200px;   /* no crecerá más que esto */
+      z-index: 10;
     }
-    .custom-navbar .nav-link:hover::after {
-      width: 100%;
-      left: 0;
-      background: #3a9cff;
-    }
-    .custom-navbar .btn-login {
-      background: #3a9cff;
-      color: #fff !important;
-      padding: 6px 15px;
-      border-radius: 20px;
-      transition: 0.3s;
-    }
-    .custom-navbar .btn-login:hover {
-      background: #1f6fb2;
-    }
-    /* Logo del centro */
-    .navbar-brand img {
-      height: 50px;
-    }
-    /* Dropdown Tienda */
+
+    /* Dropdown Tienda moderno */
     .dropdown-menu {
-      background: #1b263b;
+      background: rgba(20, 30, 50, 0.95);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0px 5px 15px rgba(0,0,0,0.5);
+      transition: all 0.3s ease;
     }
     .dropdown-item {
-      color: #e0e6ed !important;
+      color: #fff !important;
+      transition: background 0.3s ease, color 0.3s ease;
     }
     .dropdown-item:hover {
-      background-color: #3a9cff;
+      background: #3a9cff;
       color: #fff !important;
     }
+
     /* Formulario */
     #formulario-container {
       padding: 40px;
@@ -95,11 +116,13 @@
       box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
       animation: fadeIn 1s ease;
     }
+
     h2 {
       font-weight: bold;
       text-align: center;
       color: #333;
     }
+
     .form-control {
       border-radius: 10px;
       transition: all 0.3s ease;
@@ -108,6 +131,7 @@
       border-color: #0dcaf0;
       box-shadow: 0 0 10px rgba(13, 202, 240, 0.5);
     }
+
     .btn-enviar {
       width: 100%;
       padding: 12px;
@@ -122,6 +146,7 @@
       transform: translateY(-3px);
       box-shadow: 0px 5px 15px rgba(0, 123, 255, 0.5);
     }
+
     /* Animación */
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(20px); }
@@ -156,7 +181,6 @@
         <li class="nav-item">
           <a class="nav-link active" href="Home.html">Inicio</a>
         </li>
-        <!-- Dropdown Tienda -->
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" id="tiendaDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Tienda
@@ -173,7 +197,7 @@
 
       <!-- Logo centro -->
       <a class="navbar-brand mx-auto" href="#">
-        <img src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/ImagenLlave.png?raw=true" alt="Logo AtlantisCraft">
+        <img class="navbar-logo" src="https://github.com/BlaTV29/ProyectoProgramacionWeb/blob/main/Imagenes/Atlantis_Png.png?raw=true" alt="Logo AtlantisCraft">
       </a>
 
       <!-- Links derecha -->
